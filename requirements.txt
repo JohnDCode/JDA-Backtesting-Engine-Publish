@@ -1,0 +1,13 @@
+JDA Backtesting Engine
+
+
+Python Dependencies:
+
+pandas
+numpy
+yfinance
+
+- Downlaod the .so and .py files
+- Set the path to the .so file from both python files
+- Follow instructions within user.py
+- Run main.py
