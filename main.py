@@ -31,13 +31,13 @@ for symbol in Options.symbols:
 
     # Check if the bar data already exists in the /data folder
     found = False
-    for entry in os.listdir("../data"):
+    for entry in os.listdir("data"):
         if f"{file_name}.csv" == entry:
             found = True
             break
     if found:
         # If the data already exists in the data folder, just import the csv to the engine
-        market_data.load_from_csv(symbol, f"../data/{file_name}.csv")
+        market_data.load_from_csv(symbol, f"data/{file_name}.csv")
         continue
 
     # Retrieve the bar data from Yahoo finance (throw if args are wrong)
@@ -58,10 +58,10 @@ for symbol in Options.symbols:
     data.reset_index(inplace=True)
 
     # Export the bar data to the appropriate csv
-    data.to_csv(f"../data/{file_name}.csv", index=False)
+    data.to_csv(f"data/{file_name}.csv", index=False)
 
     # Load bar data to market feed
-    market_data.load_from_csv(symbol, f"../data/{file_name}.csv")
+    market_data.load_from_csv(symbol, f"data/{file_name}.csv")
 
 
 # Collect dividend/splits data
